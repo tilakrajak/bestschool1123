@@ -57,7 +57,7 @@ routes.get('/admin/aboutdelete/:id',CheckLogin,AboutController.deleteabout)
 //admin/contact/contactcontroller
 
 routes.get('/admin/addcontact',CheckLogin,ContactController.addcontact)
-routes.get('/admin/insertcontact',CheckLogin,ContactController.insertcontact)
+routes.post('/admin/insertcontact',CheckLogin,ContactController.insertcontact)
 routes.get('/admin/contactView/:id',CheckLogin,ContactController.viewcontact)
 routes.get('/admin/contactedit/:id',CheckLogin,ContactController.editcontact)
 routes.post('/admin/contactupdate/:id',CheckLogin,ContactController.updatecontact)
