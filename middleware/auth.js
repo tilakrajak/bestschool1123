@@ -1,8 +1,5 @@
 const jwt = require('jsonwebtoken')
 const Adminmodel = require('../models/Admin')
-
-
-
 const CheckLogin = async (req,res, next) =>{
 
     // console.log('hello middleware')
@@ -25,7 +22,4 @@ const CheckLogin = async (req,res, next) =>{
     }
 
 }
-
-
-
 module.exports = CheckLogin

@@ -14,12 +14,13 @@ class BookController {
         address: req.body.address,
       });
       await result.save();
-      // this.sendEmail(name, email);
+      this.sendEmail(name, email);
       res.redirect("/");
     } catch (error) {
       console.log(error);
     }
   };
+
   static BookDisplay = async (req, res) => {
     try {
       //res.send('hello')
@@ -31,6 +32,29 @@ class BookController {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  static sendEmail = async (name, email) => {
+    
+
+    let transporter = await nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+
+      auth: {
+        user: "tilakrajak72@gmail.com",
+        pass: "nstjakjvhzwbsgsw",
+      },
+    });
+
+    let info = await transporter.sendMail({
+      from: "test@gmail.com", // sender address
+      to: email, // list of receivers
+      subject: "your order is placed succesfully", //Subject line
+      text: "hello", //plain text body
+      html: `<b>${name}</b> Order placed successfull!`, // html body
+    });
+    console.log("Message sent: %s", info.messageId);
   };
  
 }

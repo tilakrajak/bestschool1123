@@ -75,7 +75,7 @@ routes.get('/admin/Sliderdelete/:id',CheckLogin,SliderController.deleteslider)
 
 //bookcontrolleer
 //bookController
-routes.post('/bookinsert',BookController.insertbook )
+routes.post('/bookinsert',CheckLogin,BookController.insertbook )
 routes.get('/admin/book',CheckLogin,BookController.BookDisplay)
 
 
