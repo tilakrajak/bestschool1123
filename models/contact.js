@@ -11,10 +11,14 @@ const ContactSchema = new mongoose.Schema({
         require:true
     },
    
-    description:{
+    phoneno:{
         type:String,
         require:true
 
+    },
+     message:{
+        type:String,
+        require:true
     },
 
 },{timestamps:true})
