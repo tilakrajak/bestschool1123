@@ -21,11 +21,12 @@ class ContactController{
           const result = new ContactModel({
             name:req.body.name,
             email:req.body.email,
-               description:req.body.description
+               phoneno:req.body.phoneno,
+               message:req.body.message,
           })
           
         await result.save()
-        res.redirect('/admin/addcontact')
+        res.redirect('/contact')
 
         }catch (error) {
             console.log(error);
