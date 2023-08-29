@@ -30,7 +30,17 @@ class ContactController{
         }catch (error) {
             console.log(error);
         }
-    }
+    };
+    static displaycontact = async (req, res) => {
+        try {
+            
+          const {verified} = req.data1
+          const display = await ContactModel.find();
+          res.render("admin/contact/contactdisplay", { d: display,verified:verified });
+        } catch (error) {
+          console.log(error);
+        }
+      };
     // static viewcontact =async(req,res)=>{
     //     try{
     //         const{name,image}= req.data1
